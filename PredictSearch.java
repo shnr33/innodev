@@ -85,9 +85,8 @@ public class PredictSearch {
 	       
 	        for (int i = 0; i < root.children.length; i++)
 	        {
-	            
                   branch.insert(level, root.digit);
-	              print(root.children[i], level+1, branch);   
+	          print(root.children[i], level+1, branch);   
 	        }
 	       
 	        if (root.digit=='F' || root.digit=='M')
@@ -113,17 +112,15 @@ public class PredictSearch {
 
 	        for (int i = 0; i < root.children.length; i++)
 	        {
-	            
 	            branch.insert(level, root.digit);
 	            printRest(root.children[i], level+1, branch);   
 	        }
 	       
 	        if (root.digit=='F' || root.digit=='M')
 	        {
-	        	
-	        	System.out.print(res);
+	             System.out.print(res);
 	             for (int j = 1; j <= level; j++)
-	               System.out.print(branch.charAt(j));
+	                 System.out.print(branch.charAt(j));
 	             System.out.println();
 	        }
 		
@@ -213,7 +210,7 @@ public class PredictSearch {
 		String searchStr;
 		TrieNode tree = tfs.createTree();
 		
-		
+		// Building a list of numbers in required format to be used as dummy data
 		for (int i=0;i<9;i++){
 			if(i%2==0) 
 				gender='F';
@@ -225,14 +222,13 @@ public class PredictSearch {
 			
 		}
 		
+		// Insert the data into the Trie
 		for(int i=0;i<data.size();i++)
 		{
-			System.out.println(data.get(i));
 			tfs.insert(tree,data.get(i));
 		}
-	   
-
-	
+		
+		// Printing the contents of the Trie
 		System.out.println("The data in the trie is-");
 		tfs.print(tree,0,tfs.branch);
 		
